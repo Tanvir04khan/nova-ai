@@ -2,8 +2,10 @@ import AuthScreen from "@/screens/AuthScreen";
 import ChatScreen from "@/screens/ChatScreen";
 import SignupScreen from "@/screens/SignupScreen";
 import Tool from "@/screens/Tools";
+import { Navigate } from "react-router";
 
 export const appRoutes = {
+  NoRoute: "/",
   Auth: "/auth",
   Signup: "/signup",
   NewChat: "/chat/new-chat",
@@ -27,6 +29,10 @@ export const apiRoutes = {
 };
 
 export const AppRoutes = [
+  {
+    path: appRoutes.NoRoute,
+    element: () => <Navigate to={appRoutes.Auth} replace />,
+  },
   {
     path: appRoutes.Auth,
     element: AuthScreen,

@@ -4,7 +4,7 @@ const chats = [
   "Plan a weekend trip",
   "Summarize an article",
 ];
-const services = ["Send Mail", "Deply App"];
+const services = ["Send Mail", "Deploy App"];
 
 const Welcome = ({ fromTool }: { fromTool: boolean }) => (
   <div className="flex flex-col items-center justify-center h-full gap-6 px-4 text-center select-none">

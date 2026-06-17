@@ -1,12 +1,14 @@
 import AuthScreen from "@/screens/AuthScreen";
 import ChatScreen from "@/screens/ChatScreen";
 import SignupScreen from "@/screens/SignupScreen";
+import Tool from "@/screens/Tools";
 
 export const appRoutes = {
   Auth: "/auth",
   Signup: "/signup",
   NewChat: "/chat/new-chat",
   Chat: "/chat/:conversationId",
+  Tool: "/tools",
 };
 
 export const apiRoutes = {
@@ -19,6 +21,9 @@ export const apiRoutes = {
   CreateConversation: "/create-conversation",
   GetMessages: "/messages/:userId",
   CreateMessage: "/create-messages",
+  GoogleAuth: "/auth/google",
+  ToolChat: "/tool-chat/:userId",
+  Tools: "/tools",
 };
 
 export const AppRoutes = [
@@ -38,6 +43,11 @@ export const AppRoutes = [
   {
     path: appRoutes.Chat,
     element: ChatScreen,
+    showSidebar: true,
+  },
+  {
+    path: appRoutes.Tool,
+    element: Tool,
     showSidebar: true,
   },
 ];

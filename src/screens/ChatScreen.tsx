@@ -157,7 +157,7 @@ const ChatScreen = () => {
       <main className="flex flex-col flex-1 min-w-0">
         <div className="flex-1 overflow-y-auto">
           {messagesState.length === 0 ? (
-            <Welcome />
+            <Welcome fromTool={false} />
           ) : (
             <div className="max-w-3xl mx-auto w-full pb-4">
               {messagesState.map((m, i) => (

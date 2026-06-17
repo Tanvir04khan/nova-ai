@@ -15,6 +15,8 @@ import {
   useSidebar,
 } from "@/components/ui/sidebar";
 import { useUserDetailsState } from "@/store/useUserDetails";
+import { apiRoutes } from "@/utils/routes";
+import { getAPIUrl } from "@/utils/utils";
 import {
   ChevronsUpDownIcon,
   SparklesIcon,
@@ -22,6 +24,7 @@ import {
   CreditCardIcon,
   BellIcon,
   LogOutIcon,
+  Mail,
 } from "lucide-react";
 
 export function NavUser() {
@@ -104,6 +107,14 @@ export function NavUser() {
               <DropdownMenuItem>
                 <BellIcon />
                 Notifications
+              </DropdownMenuItem>
+              <DropdownMenuItem
+                onClick={() => {
+                  window.location.href = `${getAPIUrl(apiRoutes.GoogleAuth)}?userId=${user?.userId}`;
+                }}
+              >
+                <Mail />
+                Connect Gmail
               </DropdownMenuItem>
             </DropdownMenuGroup>
             <DropdownMenuSeparator />

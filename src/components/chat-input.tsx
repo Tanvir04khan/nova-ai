@@ -3,7 +3,8 @@ import { SendHorizontal } from "lucide-react";
 
 import { Button } from "@/components/ui/button";
 import { Textarea } from "@/components/ui/textarea";
-import { useLocation } from "react-router";
+import { getAPIUrl } from "@/utils/utils";
+import { apiRoutes } from "@/utils/routes";
 
 interface ChatInputProps {
   onSend: (message: string) => void;
@@ -16,7 +17,7 @@ export function ChatInput({ onSend }: ChatInputProps) {
     const value = message.trim();
     if (!value) return;
 
-    const response = await fetch("http://localhost:3000/api/v1/chat", {
+    const response = await fetch(getAPIUrl(apiRoutes.chat), {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({ message: value, service: "gemini" }),
